@@ -8,6 +8,8 @@ import { AuthModule } from "./auth/auth.module";
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from './product/product.module';
 import { logger, LoggerMiddleware } from "./middleware/logger.middleware";
+import { BrandModule } from './brand/brand.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -26,6 +28,8 @@ import { logger, LoggerMiddleware } from "./middleware/logger.middleware";
     UsersModule,
     AuthModule,
     ProductModule,
+    BrandModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

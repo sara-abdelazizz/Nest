@@ -130,7 +130,10 @@ export class AuthService {
       credentials: { accessToken, refreshToken },
     };
   }
-   getProfile(req:any){
-    return {message:"profile fetched successfully" ,data:req.user}
+  getProfile(req: any) {
+    return { message: "profile fetched successfully", data: req.user };
+  }
+  async uploadfiles(files: Array<Express.Multer.File[]>) {
+    return { message: "file uploaded successfully", data: files };
   }
 }
