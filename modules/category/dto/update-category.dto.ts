@@ -21,9 +21,7 @@ export class UpdateCategoryDto {
   @Length(3, 5000)
   description?: string;
 
-  @IsMongoId()
-  @IsNotEmpty()
-  createdBy: Types.ObjectId;
+ 
 
   @IsString()
   image: string;

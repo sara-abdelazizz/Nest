@@ -9,6 +9,7 @@ import mongoose, { HydratedDocument, Mongoose, Types } from "mongoose";
 import { GenderEnum, OtpEnum, ProviderEnum } from "src/common/enums/user.enum";
 import { emailEvents } from "src/common/utils/events/email.events";
 import { hash } from "src/common/utils/hashing/hash";
+import { User } from "./user.model";
 
 @Schema({
   timestamps: true,
@@ -31,7 +32,7 @@ export class Otp {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "User",
+    ref: User.name,
   })
   createdBy: Types.ObjectId;
 

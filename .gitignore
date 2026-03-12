@@ -1,5 +1,10 @@
+node_modules/
+dist/
 
-node_modules
-config\dev.env
-dist
-
+.env
+.env.*
+!.env
+config/dev.env
+config/*.env
+src/uploads/
+uploads

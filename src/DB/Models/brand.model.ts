@@ -7,8 +7,10 @@ import {
 } from "@nestjs/mongoose";
 import mongoose, { HydratedDocument, Mongoose, Types } from "mongoose";
 import slugify from "slugify";
+import { User } from "./user.model";
 
 @Schema({
+  collection: 'brand',
   timestamps: true,
   toJSON: { virtuals: true },
   toObject: { virtuals: true },
@@ -32,7 +34,7 @@ export class Brand {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: "User",
+    ref: User.name,
   })
   createdBy: Types.ObjectId;
 

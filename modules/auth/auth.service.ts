@@ -103,14 +103,19 @@ export class AuthService {
       throw new BadRequestException("invalid email or password");
 
     const jwtid = randomUUID();
+
+    console.log('JWT secret:', process.env.TOKEN_ACCESS_ADMIN_SECRET);
+  console.log('JWT expire:', process.env.ACCESS_TOKEN_EXPIRE_IN);
+
+
     const accessToken = await this.jwtService.sign(
       {
         id: user._id,
         email: user.email,
       },
       {
-        secret: process.env.ACCESS_TOKEN_SECRET,
-        expiresIn: Number(process.env.ACCESS_EXPIRESAT),
+        secret: process.env.TOKEN_ACCESS_ADMIN_SECRET,
+        expiresIn: Number(process.env.ACCESS_TOKEN_EXPIRE_IN),
         jwtid,
       },
     );
@@ -120,8 +125,8 @@ export class AuthService {
         email: user.email,
       },
       {
-        secret: process.env.REFRESH_TOKEN_SECRET,
-        expiresIn: Number(process.env.REFRESH_EXPIRESAT),
+        secret: process.env.TOKEN_REFRESH_ADMIN_SECRET,
+        expiresIn: Number(process.env.REFRESH_TOKEN_EXPIRE_IN),
         jwtid,
       },
     );

@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
     if (!token) throw new UnauthorizedException("invalid token format");
     
     const payload =  this.jwtService.verify(token,{
-        secret:process.env.ACCESS_TOKEN_SECRET
+        secret: process.env.TOKEN_ACCESS_ADMIN_SECRET
     })
     const user= await this.userModel.findById(payload.id)
     if(!user) throw new NotFoundException("user not found")

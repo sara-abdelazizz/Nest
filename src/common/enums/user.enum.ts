@@ -8,7 +8,19 @@ export enum GenderEnum {
 }
 
 export enum OtpEnum {
-  EMAIL_VERIFICATION = "EMAILE_VERIFICATION",
+  EMAIL_VERIFICATION = "EMAIL_VERIFICATION",
   PASSWORD_RESET = "PASSWORD_RESET",
   TwoStepVerification = "TwoStepVerification",
+}
+
+export enum OrderStatusEnum {
+  PLACED = "PLACED",
+  PROCCESSING = "PROCCESSING",
+  SHIPPED = "PASSWORD_RESET",
+  DELIVERED = "DELIVERED",
+  CANCELLED = "CANCELLED",
+}
+export enum PaymentMethodEnum {
+  CASH = "CASH",
+  card= "card",
 }
